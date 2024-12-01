@@ -5,9 +5,9 @@ public class PrimeFactorUsingSqaureRoot {
         System.out.println(isPrime(a));
     }
 
-    public static boolean isPrime(int num) {
-        for (int i = 2; i <= (int) Math.sqrt(num); i++) {
-            if (num % i == 0) {
+    public static boolean isPrime(int N) {
+        for (int i = 2; i <= (int) Math.sqrt(N); i++) {
+            if (N % i == 0) {
                 return false;
             }
         }
