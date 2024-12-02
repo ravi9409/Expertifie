@@ -1,5 +1,8 @@
 package TwoPointers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
     public static void main(String[] args) {
         int[] arr = {3, 2, 3};
@@ -7,7 +10,21 @@ public class TwoSum {
         for (int s1 : twoSum(arr, target))
             System.out.println(s1);
     }
-    
+
+    //Using map
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map=new HashMap<>();
+        for (int i=0;i<nums.length;i++){
+            int complement=target-nums[i];
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement),i};
+            }
+            map.put(nums[i],i);
+
+        }
+        return new int[]{-1,-1};
+    }
+
     //Using Two pointer
     /*public static int[] twoSum(int[] nums, int target) {
         int[] arr1 = new int[2];
@@ -36,6 +53,4 @@ public class TwoSum {
                 }
             }
         }*/
-        return arr1;
-    }
 }
